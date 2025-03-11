@@ -27,7 +27,14 @@ app.post("/api/users", (req, res) => {
   res.json({ message: `User ${name} added successfully!` });
 });
 
+app.get("/api/products", (req, res) => {
+  res.json({ products: ["Product1", "Product2", "Product3"] });
+}); 
 
+app.delete("/api/users/:id", (req, res) => {
+  const { id } = req.params;
+  res.json({ message: `User with ID ${id} deleted successfully!` });
+});
 
 const PORT = process.env.PORT || 5000;
 
