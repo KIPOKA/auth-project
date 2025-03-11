@@ -35,7 +35,11 @@ app.delete("/api/users/:id", (req, res) => {
   const { id } = req.params;
   res.json({ message: `User with ID ${id} deleted successfully!` });
 });
-
+app.put("/api/users/:id", (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+  res.json({ message: `User with ID ${id} updated to ${name}!` });
+});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
