@@ -17,7 +17,13 @@ app.get("/", (req, res) => {
 });
 
 
-// Get the port from .env or use a default value
+// Get the port from .env or use a default value// Additional API endpoints
+app.get("/api/users", (req, res) => {
+  res.json({ users: ["User1", "User2", "User3"] });
+});
+
+
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
