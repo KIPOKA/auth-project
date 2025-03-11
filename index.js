@@ -40,6 +40,9 @@ app.put("/api/users/:id", (req, res) => {
   const { name } = req.body;
   res.json({ message: `User with ID ${id} updated to ${name}!` });
 });
+app.get("/api/orders", (req, res) => {
+  res.json({ orders: ["Order1", "Order2", "Order3"] });
+});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
