@@ -22,6 +22,11 @@ app.get("/api/users", (req, res) => {
   res.json({ users: ["User1", "User2", "User3"] });
 });
 
+app.post("/api/users", (req, res) => {
+  const { name } = req.body;
+  res.json({ message: `User ${name} added successfully!` });
+});
+
 
 
 const PORT = process.env.PORT || 5000;
